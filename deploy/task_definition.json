@@ -1,0 +1,27 @@
+[
+  {
+    "name": "${td_name}",
+    "image": "${image_url}",
+    "memory": ${memoryHardLimit},
+    "memoryReservation": ${memorySoftLimit},
+    "cpu": ${cpu},
+    "essential": true,
+    "ulimits": [{
+      "name": "nofile",
+      "softLimit": 65535,
+      "hardLimit": 90000
+    }],
+    "portMappings": [{
+      "containerPort": ${container_port},
+      "hostPort": 0
+    }],
+    "logConfiguration": {
+      "logDriver": "awslogs",
+      "options": {
+        "awslogs-group": "${service_name}-LogGroup",
+        "awslogs-region": "${loggroup_region}",
+        "awslogs-stream-prefix": "${service_name}-LogGroup-stream"
+      }
+    }
+  }
+]
