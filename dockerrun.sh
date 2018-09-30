@@ -12,8 +12,8 @@ cd deploy
 
 docker build -t meetuphelloworld -f meetup.dockerfile .
 
-docker tag meetuphelloworld:latest 603826100439.dkr.ecr.us-east-1.amazonaws.com/meetuphelloworld:latest
+docker tag meetuphelloworld:latest <PUT_YOUR_AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/meetuphelloworld:latest
 
-docker push 603826100439.dkr.ecr.us-east-1.amazonaws.com/meetuphelloworld:latest
+docker push <PUT_YOUR_AWS_ACCOUNT_ID>.dkr.ecr.us-east-1.amazonaws.com/meetuphelloworld:latest
 
 
